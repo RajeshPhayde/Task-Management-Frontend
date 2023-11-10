@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+.home{
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.home h1{
+    font-size: xxx-large;
+    font-family: 'Tilt Neon', sans-serif;
+    text-shadow: 2px 2px 15px rgb(189, 189, 196),
+    2px 2px 20px rgb(45, 45, 224);
+}
+.home img{
+    width: 600px;
+    height: 600px;
+    /* position: absolute; */
+    /* right: 100px; */
+}

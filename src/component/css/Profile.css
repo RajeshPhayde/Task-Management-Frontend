@@ -1,0 +1,66 @@
+.profile-page{
+    padding: 30px 100px ;
+    display: flex;
+}
+.profile-page ~ div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-page img{
+    border-radius: 50%;
+    margin-right: 60px;
+    box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+.editProfile{
+    font-size: x-large;
+    text-shadow: 0 0 3px white, 0 0 6px white,
+    0 0 9px white, 0 0 12px black;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    position: relative;
+    right: 110px;
+    bottom: 10px;
+}
+.editProfile:hover{
+    color: red;
+}
+.pro-details{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.pro-details button{
+    padding: 10px;
+    font-size: large;
+    outline: none;
+    color: #fff;
+    background-color: #2864a8;
+    border: none;
+    border-radius: 10px;
+}
+.pro-details button:hover{
+    box-shadow: 0 0 5px, 0 0 15px;
+}
+.pro-details button:active{
+    box-shadow: 2px 2px 5px black;
+}
+.close{
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: transform .7s ease-in-out;
+}
+.close:hover{
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in-out 0s;
+}
+.submit{
+    padding: 6px 15px;
+    border: none;
+    border-radius: 6px;
+}

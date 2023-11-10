@@ -1,0 +1,16 @@
+nav{
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav > a{
+    font-size: 24px;
+    text-decoration: none;
+    color: orange;
+}
+.active{
+    text-decoration: underline orange;
+    color: yellow;
+}
