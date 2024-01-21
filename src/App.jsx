@@ -6,8 +6,10 @@ import Navbar from './component/Navbar'
 import Profile from './component/Profile'
 import AuthProvider from './component/AuthProvider';
 import AddTask from './component/AddTask'
-import AllTask from './component/AllTask'
+// import AllTask from './component/AllTask'
 import SingleTask from './component/SingleTask'
+import LoginOtp from './component/LoginOtp'
+import VerifyOtp from './component/VerifyOtp'
 
 function App() {
 
@@ -23,6 +25,9 @@ function App() {
           <Route path='/addtask' element={<AddTask/>}/>
           <Route path='/tasks' element={<SingleTask/>}/>
           {/* <Route path='/alltask' element={<AllTask/>}/> */}
+          <Route path='/sendOtp' element={<LoginOtp/>}/>
+          <Route path='/verifyOtp' element={<VerifyOtp/>}/>
+
         </Routes>
       </AuthProvider>
     </BrowserRouter>

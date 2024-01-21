@@ -4,10 +4,12 @@ import './css/Signup.css'
 import { useState } from "react"
 import { Link, useNavigate } from 'react-router-dom';
 import  axios  from 'axios';
+import { useAuth } from './AuthProvider';
 
 const Signup = () => {
 
-    let [login, setLogin] = useState(false);
+    let {login}= useAuth();
+    let [Login, setLogin] = useState(false);
     let navigate = useNavigate();
     
     const [reset, setReset] = useState(false);
@@ -36,24 +38,25 @@ const Signup = () => {
         }
     }
 
-    const [loginData, setLoginData] = useState({
+    const [LoginData, setLoginData] = useState({
         email:"",
         password:""
     })
     const handleChangeLogin = async(e)=>{
         const {name, value} = e.target;
-        setLoginData({...loginData, [name]:value})
+        setLoginData({...LoginData, [name]:value})
     }
     const handleLogin = async(e)=>{
         e.preventDefault();
         try{
-            let response = await axios.post("http://localhost:5000/api/user/userlogin", loginData)
+            let response = await axios.post("http://localhost:5000/api/user/userLogin", LoginData)
             // console.log(response);
             localStorage.setItem("token", response.data.token)
             alert(response.data.message)
             setTimeout(() => {
                 localStorage.removeItem("token")
             }, 600000);
+            login( response.data.token)
             navigate("/profile")
         }
         catch(err){
@@ -63,7 +66,7 @@ const Signup = () => {
     }
   return (
     <div>
-        {!login && <form onSubmit={handleSubmit}>
+        {!Login && <form onSubmit={handleSubmit}>
             <h2>Signup</h2>
             <div>
                 <p>Already a member? <Link onClick={()=>{setLogin(true)}}>Login</Link></p>
@@ -98,12 +101,12 @@ const Signup = () => {
             <input className='btn' type="submit" value="Signup" />
         </form>}
         
-        {login && 
+        {Login && 
         <form onSubmit={handleLogin}>
             <h2>Login</h2>
-            <input type="email" name='email' value={loginData.email}
+            <input type="email" name='email' value={LoginData.email}
             placeholder='email id' required onChange={handleChangeLogin}/>
-            <input type="password" name='password' value={loginData.password} 
+            <input type="password" name='password' value={LoginData.password} 
             placeholder='password' required onChange={handleChangeLogin}/>
             {reset && <p style={{fontSize:"15px", color:"crimson"}}>Forgot password? <Link to='/reset'
             onClick={()=>{setReset(false)}}>Reset Password</Link></p>}
@@ -112,7 +115,7 @@ const Signup = () => {
             </div>
             <input className='btn' type="submit" value="Login" />
             <div>
-                <p>Login with Otp? <Link onClick={()=>{setLogin(false)}}>sendOtp</Link></p>
+                <p>Login with Otp? <Link to={`/sendOtp`}>sendOtp</Link></p>
             </div>
             </form>}
     </div>
