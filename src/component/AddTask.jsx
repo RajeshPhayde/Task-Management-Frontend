@@ -23,9 +23,11 @@ const AddTask = () => {
             let response = await axios.post("http://localhost:5000/api/task/addtask", taskData,{headers: { 
                 'Authorization': `Bearer ${token}`}})
             console.log(response)
+            alert(response.data.message)
         }
         catch(err){
-            console.log(err)
+            console.log(err.response)
+            alert(err.response.data.message)
         }
     }
 

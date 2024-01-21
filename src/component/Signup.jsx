@@ -57,6 +57,7 @@ const Signup = () => {
             navigate("/profile")
         }
         catch(err){
+            setReset(true);
             alert(err.response.data.message)
         }
     }
@@ -104,7 +105,8 @@ const Signup = () => {
             placeholder='email id' required onChange={handleChangeLogin}/>
             <input type="password" name='password' value={loginData.password} 
             placeholder='password' required onChange={handleChangeLogin}/>
-            {reset && <p style={{fontSize:"15px", color:"crimson"}}>Forgot password? <Link to='/reset' onClick={()=>{setReset(false)}}>Reset Password</Link></p>}
+            {reset && <p style={{fontSize:"15px", color:"crimson"}}>Forgot password? <Link to='/reset'
+            onClick={()=>{setReset(false)}}>Reset Password</Link></p>}
             <div>
                 <p>Create account? <Link onClick={()=>{setLogin(false)}}>signup</Link></p>
             </div>

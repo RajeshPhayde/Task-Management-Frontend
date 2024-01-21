@@ -19,7 +19,9 @@ const Navbar = () => {
         <NavLink to='/home'>Home</NavLink>
         <NavLink to='/profile'>Profile</NavLink>
         <NavLink to='/addtask'>Add task</NavLink>
-        <NavLink to='/alltask'>All task</NavLink>
+        <NavLink to='/tasks'>Tasks</NavLink>
+        {/* <NavLink to='/alltask'>All task</NavLink> */}
+
         
         {!user && <NavLink to='/'>Signup/Login</NavLink>}
         {user && <button onClick={handleLogout}>Logout</button>}
