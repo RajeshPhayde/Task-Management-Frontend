@@ -26,13 +26,28 @@
 .editProfile:hover{
     color: red;
 }
+.timeout{
+    color: #e7d2d5;
+    text-shadow: 0 0 20px black, 0 0 10px rgb(231, 165, 165);
+}
+.timeout > a{
+    color: rgb(28, 0, 104);
+}
+
 .pro-details{
     margin-top: 25px;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    /* border-radius: 16px; */
+    /* box-shadow: 0 0 10px rgb(255, 215, 240); */
+    padding: 20px 50px;
+}
+.pro-details > h2{
+    color: rgb(206, 195, 195);
 }
 .pro-details button{
+    width: 120px;
     padding: 10px;
     font-size: large;
     outline: none;

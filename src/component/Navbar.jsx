@@ -10,8 +10,9 @@ const Navbar = () => {
 
   let handleLogout = ()=>{
     logout();
-    navigate("/")
-    window.location.reload()
+    localStorage.removeItem("token")
+    alert("You are logged out, redirecting to home page")
+    navigate("/home")
   }
 
   return (
@@ -24,8 +25,9 @@ const Navbar = () => {
 
         
         {!user && <NavLink to='/'>Signup/Login</NavLink>}
-        {user && <button onClick={handleLogout}>Logout</button>}
-        {/* <li><NavLink to='/home'>Home</NavLink></li> */}
+        {user && 
+        <button className='logout' onClick={handleLogout}>Logout</button>
+        }
     </nav>
   )
 }

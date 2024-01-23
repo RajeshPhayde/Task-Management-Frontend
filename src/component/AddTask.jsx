@@ -1,5 +1,6 @@
 // import React from 'react'
-
+// import FloatingLabel from 'react-bootstrap';
+// import Form from 'react-bootstrap';
 import axios from "axios";
 import { useState } from "react"
 
@@ -64,6 +65,22 @@ const AddTask = () => {
             </fieldset>
             <input className='btn' type="submit" value="Submit" />
         </form>
+
+   
+    {/* <FloatingLabel
+        controlId="floatingTextarea"
+        label="Task Name"
+        className="mb-3"
+      >
+        <Form.Control as="textarea" placeholder="Leave a comment here" />
+      </FloatingLabel>
+      <FloatingLabel controlId="floatingTextarea2" label="Description">
+        <Form.Control
+          as="textarea"
+          placeholder="Leave a comment here"
+          style={{ height: '100px' }}
+        />
+      </FloatingLabel> */}
     </div>
   )
 }

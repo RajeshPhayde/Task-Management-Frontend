@@ -18,10 +18,12 @@ const LoginOtp = () => {
         e.preventDefault();
         try{
             let otp = await axios.post("http://localhost:5000/api/user/otplogin", formData);
+            alert(otp.data.message)
             setOtpSent(true);
         }
         catch(err){
             console.log(err)
+            alert(err.response.data.message)
         }
     }
   return (

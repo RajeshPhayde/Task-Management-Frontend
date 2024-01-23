@@ -34,10 +34,12 @@ const Profile = () => {
   const handleSubmit = async(e)=>{
     try{
       e.preventDefault()
-      console.log(form)
+      // console.log(form)
       
         let update = await axios.put("http://localhost:5000/api/user/updateuser", form)
         console.log(update);
+        setIsOpen(false)
+        location.reload();
     }
     catch(err){
       console.log(err)
@@ -92,12 +94,12 @@ const Profile = () => {
           </div>
         }
         
-        {!user && <h2 style={{color:"crimson"}}>Session timeout...!!! Please Login to continue...
-          <Link to="/">Login</Link></h2>}
+        {!user && <h2 className='timeout'>Session timeout...!!! Please Login to continue...
+          <Link title='login' to="/">Login</Link></h2>}
         {user && <div className="pro-details">
-                    <h2>Name : {user.name}</h2>
+                    <h2>Name &nbsp;&nbsp;&nbsp; : {user.name}</h2>
                     <h2>Email Id : {user.email}</h2>
-                    <h2>Role : {user.role}</h2>
+                    <h2>Role &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {user.role}</h2>
                     <button onClick={openModal}>Edit profile</button>
                 </div>}
   

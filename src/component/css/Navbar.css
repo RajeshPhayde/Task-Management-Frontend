@@ -14,3 +14,20 @@ nav > a{
     text-decoration: underline orange;
     color: yellow;
 }
+.logout{
+    width: 70px;
+    padding: 6px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    background-color: rgb(51, 71, 248);
+    border: none;
+    border-radius: 6px;
+    box-shadow: 2px 2px 0 rgb(97, 87, 87);
+}
+.logout:active{
+    box-shadow: none;
+    position: relative;
+    left: 2px;
+    top: 2px;
+}
